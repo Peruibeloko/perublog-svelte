@@ -10,7 +10,7 @@
     post;
 
   async function hashChangeHandler() {
-    const isDev = true;
+    const isDev = false;
     const postNum = +location.hash.slice(1);
     const fetchData = await fetch(
       `http://${isDev ? 'localhost:9595' : 'perublog.herokuapp.com'}/post/${postNum || postCount}`

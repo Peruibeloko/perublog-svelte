@@ -19,10 +19,10 @@
     <a href="https://www.fb.com/dyn.mic.dnb/" target="_blank">
       <li id="facebook">Facebook</li>
     </a>
-    <a href="https://www.twitch.tv/dynmic_brazil" target="_blank">
+    <a href="https://www.twitch.tv/dynmicdnb" target="_blank">
       <li id="twitch">Twitch</li>
     </a>
-    <a href="https://twitter.com/dynmic_brazil" target="_blank">
+    <a href="https://twitter.com/dynmicdnb" target="_blank">
       <li id="twitter">Twitter</li>
     </a>
   </ul>
