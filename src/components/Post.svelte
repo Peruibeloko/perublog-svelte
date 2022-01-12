@@ -13,7 +13,7 @@
     const isDev = false;
     const postNum = +location.hash.slice(1);
     const fetchData = await fetch(
-      `http://${isDev ? 'localhost:9595' : 'perublog.herokuapp.com'}/post/${postNum || postCount}`
+      `${isDev ? 'http://localhost:9595' : 'https://perublog.herokuapp.com'}/post/${postNum || postCount}`
     );
     const postData = await fetchData.json();
     const postObject = new Post(postData);
