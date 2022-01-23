@@ -7,11 +7,11 @@ export class Post {
     dayjs.extend(relativeTime);
     dayjs.locale('pt-br');
 
-    this.title = data?.title || 'Pô, aí não amigão...';
-    this.author = data?.author || 'Carlos';
-    this.datetime = data?.datetime || null;
+    this.title = data?.title ?? 'Pô, aí não amigão...';
+    this.author = data?.author ?? 'Carlos';
+    this.datetime = data?.datetime ?? null;
     this.dateStrings = this.getTimeStrings(this.datetime);
-    this.post = data?.post || 'Foi caçar coisa que não devia, achou nada!';
+    this.post = data?.post ?? 'Foi caçar coisa que não devia, achou nada!';
   }
 
   getTimeStrings(datetime) {
