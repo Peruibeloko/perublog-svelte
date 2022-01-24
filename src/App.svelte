@@ -1,12 +1,20 @@
 <script>
+  import { isSidebarOpen } from '../store';
+
   import Header from './components/Header.svelte';
   import Socials from './components/Socials.svelte';
   import Post from './components/Post.svelte';
   import Navbar from './components/Navbar.svelte';
+
+  let backdropState = '';
+
+  isSidebarOpen.subscribe(value => {
+    backdropState = value ? 'active' : '';
+  });
 </script>
 
 <main class="grid-container">
-  <span id="backdrop" />
+  <span id="backdrop" class={backdropState} />
   <Header />
   <Socials />
   <Post />
