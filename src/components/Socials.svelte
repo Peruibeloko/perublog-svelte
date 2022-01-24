@@ -1,12 +1,18 @@
 <script>
-  // TODO Usar Transiçoes do Svelte!
+  import { isSidebarOpen } from '../store';
+
+  let sidebarState = '';
+
   function closeMobileSocials() {
-    document.querySelector('#socials').classList.remove('active');
-    document.querySelector('#backdrop').classList.remove('active');
+    isSidebarOpen.set(false);
   }
+
+  isSidebarOpen.subscribe(value => {
+    sidebarState = value ? 'active' : '';
+  });
 </script>
 
-<aside id="socials">
+<aside id="socials" class={sidebarState}>
   <h1>Redes</h1>
   <span id="close" on:click={closeMobileSocials}>→</span>
   <ul>

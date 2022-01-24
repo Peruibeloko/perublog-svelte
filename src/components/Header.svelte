@@ -1,7 +1,8 @@
 <script>
+  import { isSidebarOpen } from '../store';
+
   function openMobileSocials() {
-    document.querySelector('#socials').classList.add('active');
-    document.querySelector('#backdrop').classList.add('active');
+    isSidebarOpen.set(true);
   }
 </script>
 
