@@ -1,29 +1,22 @@
 <script>
   import { onMount } from 'svelte';
-  import { getPostCount, Post } from '../classes/Post';
+  import { getLatestPost, getTimeStrings, Post } from '../classes/Post';
 
-  let postCount;
-
-  let title,
-    author,
-    dateStrings = [],
-    post;
+  let { title, author, datetime, post } = new Post({});
+  let dateStrings = getTimeStrings(datetime);
 
   async function hashChangeHandler() {
-    const isDev = false;
-    const postNum = +location.hash.slice(1);
-    const fetchData = await fetch(
-      `${isDev ? 'http://localhost:9595' : 'https://perublog.herokuapp.com'}/post/${postNum || postCount}`
-    );
+    const postOffset = +location.hash.slice(1);
+    const fetchData = await fetch(`${'https://perublog.herokuapp.com'}/post/offset/${postOffset}`);
     const postData = await fetchData.json();
     const postObject = new Post(postData);
-    ({ title, author, dateStrings, post } = postObject);
+    ({ title, author, datetime, post } = postObject);
   }
 
   onMount(async () => {
-    postCount = await getPostCount();
+    ({ title, author, datetime, post } = await getLatestPost());
+    dateStrings = getTimeStrings(datetime);
     addEventListener('hashchange', hashChangeHandler, false);
-    hashChangeHandler();
   });
 </script>
 

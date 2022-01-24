@@ -11,7 +11,7 @@
   };
 
   function firstPost() {
-    location = '#1';
+    location = `#${postCount}`;
   }
 
   function lastPost() {
@@ -21,7 +21,7 @@
   function relativePost(offset) {
     const postNum = +location.hash.slice(1);
     if (!postNum) {
-      location = `#${postCount - 1}`;
+      location = '1';
     } else {
       location = `#${postNum + offset}`;
     }
