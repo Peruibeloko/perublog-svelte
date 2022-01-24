@@ -1,5 +1,5 @@
 <script>
-  import { isSidebarOpen } from '../store';
+  import { isSidebarOpen } from './store';
 
   import Header from './components/Header.svelte';
   import Socials from './components/Socials.svelte';
