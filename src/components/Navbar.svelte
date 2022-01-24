@@ -11,7 +11,7 @@
   };
 
   function firstPost() {
-    location = `#${postCount}`;
+    location = `#${postCount - 1}`;
   }
 
   function lastPost() {
